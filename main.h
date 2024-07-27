@@ -13,6 +13,7 @@ int print_int(va_list arguments, char *buf, unsigned int ibuf);
 int _putchar(char c);
 unsigned int handle_int(char *buf, int num, unsigned int ibuf);
 unsigned int handle_string(char *buf, char *str, unsigned int ibuf);
+unsigned int handl_buf(char *buf, char c, unsigned int ibuf);
 
 
 #endif /* MAIN_H */

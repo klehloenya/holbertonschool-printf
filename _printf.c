@@ -9,7 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-unsigned int i = 0, count = 0, ibuf = 0;
+unsigned int i = 0, ibuf = 0;
 va_list args;
 char buffer[1024];
 
@@ -91,12 +91,11 @@ return (ibuf);
 unsigned int handle_int(char *buf, int num, unsigned int ibuf)
 {
 unsigned int temp, div = 1;
-int i, isneg = 0;
+int i;
 
 if (num < 0)
 {
 ibuf = handl_buf(buf, '-', ibuf);
-isneg = 1;
 num = -num;
 }
 temp = num;
