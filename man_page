@@ -1,0 +1,77 @@
+.TH _PRINTF 26 "July 2024" "1.0" "_PRINTF FUNCTION MANUAL"
+.SH NAME
+_printf \- produce output according to a format
+
+.SH SYNOPSIS
+.B #include <stdio.h>
+.B #include <stdarg.h>
+
+.B int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+.B _printf
+produces output according to a format as described below. The function writes its output to the standard output stream, stdout.
+
+The
+.B format
+string is composed of zero or more directives. Ordinary characters (not %) in the format string are copied to the output. A % character in the format string introduces a conversion specifier.
+
+The following conversion specifiers are supported:
+
+.TP
+.B c
+Prints a single character.
+
+.TP
+.B s
+Prints a string of characters.
+
+.TP
+.B %
+Prints a % character.
+
+.TP
+.B d, i
+Prints a decimal (base 10) number.
+
+.SH RETURN VALUE
+.B _printf
+returns the number of characters printed (excluding the null byte used to end output to strings).
+
+.SH NOTES
+- You don~@~Yt have to reproduce the buffer handling of the C library printf function.
+- You don~@~Yt have to handle the flag characters.
+- You don~@~Yt have to handle field width.
+- You don~@~Yt have to handle precision.
+- You don~@~Yt have to handle the length modifiers.
+
+.SH EXAMPLES
+.nf
+#include "main.h"
+
+int main(void)
+{
+    _printf("Character: %c\n", 'H');
+    _printf("String: %s\n", "Hello, World!");
+    _printf("Percent: %%\n");
+    _printf("Integer: %d\n", 123);
+    return (0);
+}
+.fi
+
+Output:
+.nf
+Character: H
+String: Hello, World!
+Percent: %
+Integer: 123
+.fi
+
+.SH SEE ALSO
+.B printf(3)
+
+.SH BUGS
+No known bugs.
+
+.SH AUTHOR
+Keketso Nchai and Lemohang Lipholo
